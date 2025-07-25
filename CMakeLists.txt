@@ -219,16 +219,16 @@ except ImportError:
 endmacro()
 
 
-if(PYTHON2_EXECUTABLE)
-    build_py(2)
-endif()
+#if(PYTHON2_EXECUTABLE)
+#    build_py(2)
+#endif()
 
-if(PYTHON3_EXECUTABLE)
-    build_py(3)
-endif()
+#if(PYTHON3_EXECUTABLE)
+#    build_py(3)
+#endif()
 
 if(NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
-    install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/inst_tmp/ DESTINATION ${INSTALL_LIB_DIR})
+	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${OUT_DIR_NAME}/src/jinja2 DESTINATION ${INSTALL_LIB_DIR}/Lib/site-packages/)
 endif()
 
 # Archiving ====================================================================
